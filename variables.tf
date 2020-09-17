@@ -1,18 +1,18 @@
 variable "resource_group_name" {
-    type = string
+  type = string
 }
 
 variable "location" {
-    type = string
-    default = "westeurope"
+  type    = string
+  default = "westeurope"
 }
 
 variable "storage_account_mame" {
-    type = string
-    defaulr = "uolter-cloud-example"
+  type    = string
+  default = "uolter-cloud-example"
 }
 
 variable "environment" {
-    type = string
-    default = "dev"
+  type    = string
+  default = "dev"
 }

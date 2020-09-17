@@ -1,9 +1,9 @@
 terraform {
   backend "remote" {
-    hostname              = "app.terraform.io"
-    organization          = "uolter"
+    hostname     = "app.terraform.io"
+    organization = "uolter"
     workspaces {
-      prefix              = "uolter"
+      prefix = "azure-"
     }
   }
 }
