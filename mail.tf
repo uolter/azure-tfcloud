@@ -1,8 +1,3 @@
-provider "azurerm" {
-  version = "=2.22.0"
-  features {}
-}
-
 terraform {
   backend "remote" {
     hostname              = "app.terraform.io"
@@ -13,11 +8,28 @@ terraform {
   }
 }
 
+provider "azurerm" {
+  version = "=2.22.0"
+  features {}
+}
+
 resource "azurerm_resource_group" "resource_group" {
-  name     = "tfcloud-rf"
-  location = "westeurope"
+  name     = var.resource_group_name
+  location = var.location
 
   tags = {
-    environment = "dev"
+    environment = var.environment
+  }
+}
+
+resource "azurerm_storage_account" "storage_account" {
+  name                     = var.storage_account_mame
+  resource_group_name      = azurerm_resource_group.resource_group.name
+  location                 = azurerm_resource_group.resource_group.location
+  account_tier             = "Standard"
+  account_replication_type = "GRS"
+
+  tags = {
+    environment = var.environment
   }
 }
