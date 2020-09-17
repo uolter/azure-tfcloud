@@ -8,8 +8,7 @@ variable "location" {
 }
 
 variable "storage_account_mame" {
-  type    = string
-  default = "uolter-cloud-example"
+  type = string
 }
 
 variable "environment" {
