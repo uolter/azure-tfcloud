@@ -7,7 +7,7 @@ variable "location" {
   default = "westeurope"
 }
 
-variable "storage_account_mame" {
+variable "storage_account_name" {
   type = string
 }
 
