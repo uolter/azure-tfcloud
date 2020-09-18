@@ -1,4 +1,5 @@
 # Configure common remote state
+
 generate "remote_state" {
   path      = "backend.tf"
   if_exists = "overwrite_terragrunt"
@@ -15,11 +16,11 @@ terraform {
 EOF
 }
 
-/*
 locals {
   default_yaml_path = find_in_parent_folders("empty.yaml")
 }
 
+/*
 inputs = merge(
   yamldecode(
     file(find_in_parent_folders("global.yaml", local.default_yaml_path)),
